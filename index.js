@@ -1,10 +1,14 @@
-function receiveFunction (lucky) {
-     lucky();
+function receivesAFunction (callback) {
+    console.log("you are very lucky.");
+     callback();
+};
+function callback() {
+    console.log("hey lucky one"); 
 }
-receiveFunction(function lucky() {return 12 });
+receivesAFunction(callback);
 
 function returnsANamedFunction(){
-    return receiveFunction;
+    return receivesAFunction;
 }
 function returnsAnAnonymousFunction(){
     return () => {
